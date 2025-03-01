@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("FactoryConsoleApp")]
+[assembly: AssemblyTitle("FactoryMethodConsoleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FactoryConsoleApp")]
+[assembly: AssemblyProduct("FactoryMethodConsoleApp")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("91f2ec8e-bfe7-4218-8495-0df246fd2318")]
+[assembly: Guid("3d06c27a-97fe-47dc-b734-5fc0e2fb720d")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

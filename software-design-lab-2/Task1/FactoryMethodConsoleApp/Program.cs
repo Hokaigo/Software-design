@@ -1,9 +1,13 @@
-﻿using ClassLibrary.subsctiptions;
-using ClassLibrary.factories;
+﻿using ClassLibrary.factories;
+using ClassLibrary.subsctiptions;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace FactoryConsoleApp
+
+namespace FactoryMethodConsoleApp
 {
     internal class Program
     {

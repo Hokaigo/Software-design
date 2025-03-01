@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91F2EC8E-BFE7-4218-8495-0DF246FD2318}</ProjectGuid>
+    <ProjectGuid>{3D06C27A-97FE-47DC-B734-5FC0E2FB720D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FactoryConsoleApp</RootNamespace>
-    <AssemblyName>FactoryConsoleApp</AssemblyName>
+    <RootNamespace>FactoryMethodConsoleApp</RootNamespace>
+    <AssemblyName>FactoryMethodConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FactoryMethodClassLibrary\FactoryMethodClassLibrary.csproj">
-      <Project>{28f132df-707b-4d9c-a560-385a6b60b036}</Project>
+      <Project>{9f3dd72f-5e28-4941-8607-54753445c3d4}</Project>
       <Name>FactoryMethodClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
