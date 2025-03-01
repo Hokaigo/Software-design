@@ -3,30 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethodClassLibrary", "ClassLibrary\FactoryMethodClassLibrary.csproj", "{28F132DF-707B-4D9C-A560-385A6B60B036}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryMethodClassLibrary", "Task1\FactoryMethodClassLibrary\FactoryMethodClassLibrary.csproj", "{28F132DF-707B-4D9C-A560-385A6B60B036}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryConsoleApp", "FactoryConsoleApp\FactoryConsoleApp.csproj", "{91F2EC8E-BFE7-4218-8495-0DF246FD2318}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryConsoleApp", "Task1\FactoryConsoleApp\FactoryConsoleApp.csproj", "{91F2EC8E-BFE7-4218-8495-0DF246FD2318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryClassLibrary", "AbstractFactoryClassLibrary\AbstractFactoryClassLibrary.csproj", "{2738E12F-035B-4081-BE3D-3169F11C7959}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryClassLibrary", "Task2\AbstractFactoryClassLibrary\AbstractFactoryClassLibrary.csproj", "{2738E12F-035B-4081-BE3D-3169F11C7959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryConsoleApp", "AbstractFactoryConsoleApp\AbstractFactoryConsoleApp.csproj", "{60C2818C-837B-45FA-AFAC-AF7E32DF8DB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryConsoleApp", "Task2\AbstractFactoryConsoleApp\AbstractFactoryConsoleApp.csproj", "{60C2818C-837B-45FA-AFAC-AF7E32DF8DB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonConsoleApp", "SingletonConsoleApp\SingletonConsoleApp.csproj", "{47DFB539-7727-4556-8054-8A364E0D5664}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonConsoleApp", "Task3\SingletonConsoleApp\SingletonConsoleApp.csproj", "{47DFB539-7727-4556-8054-8A364E0D5664}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeConsoleApp", "PrototypeConsoleApp\PrototypeConsoleApp.csproj", "{E4C5230D-3F8F-4B63-A0CD-FDFA2CE299FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypeConsoleApp", "Task4\PrototypeConsoleApp\PrototypeConsoleApp.csproj", "{E4C5230D-3F8F-4B63-A0CD-FDFA2CE299FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderClassLibrary", "BuilderClassLibrary\BuilderClassLibrary.csproj", "{217C2153-8F74-464B-A6C4-01B373FCD2C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderClassLibrary", "Task5\BuilderClassLibrary\BuilderClassLibrary.csproj", "{217C2153-8F74-464B-A6C4-01B373FCD2C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderConsoleApp", "BuilderConsoleApp\BuilderConsoleApp.csproj", "{0DD2D164-D21F-46D1-AE50-29B143DD6F82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderConsoleApp", "Task5\BuilderConsoleApp\BuilderConsoleApp.csproj", "{0DD2D164-D21F-46D1-AE50-29B143DD6F82}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task1", "Task1", "{85424058-199E-467A-B1CD-7F4D4B2EBDB2}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\1\Desktop\Лвби\2 курс 2 семестр\кпз фото\lab-2-diagram-1.png = C:\Users\1\Desktop\Лвби\2 курс 2 семестр\кпз фото\lab-2-diagram-1.png
+		Task1\lab-2-diagram-1.png = Task1\lab-2-diagram-1.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task2", "Task2", "{3E16D6E2-9DC6-4F85-B198-910BAC4F25F2}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\1\Desktop\Лвби\2 курс 2 семестр\кпз фото\lab-2-diagram-2.png = C:\Users\1\Desktop\Лвби\2 курс 2 семестр\кпз фото\lab-2-diagram-2.png
+		Task2\lab-2-diagram-2.png = Task2\lab-2-diagram-2.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task3", "Task3", "{DD806946-BC16-4C72-99B1-28104B46A0B0}"
@@ -35,7 +35,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task4", "Task4", "{3CC1FCBC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task5", "Task5", "{3625B318-B5F6-4EA0-919E-F427678D1BAD}"
 	ProjectSection(SolutionItems) = preProject
-		C:\Users\1\Downloads\lab-2-diagram-3.png = C:\Users\1\Downloads\lab-2-diagram-3.png
+		Task5\lab-2-diagram-3.png = Task5\lab-2-diagram-3.png
 	EndProjectSection
 EndProject
 Global

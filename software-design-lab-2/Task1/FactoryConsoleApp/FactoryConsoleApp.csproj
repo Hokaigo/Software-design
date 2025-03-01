@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary\FactoryMethodClassLibrary.csproj">
+    <ProjectReference Include="..\FactoryMethodClassLibrary\FactoryMethodClassLibrary.csproj">
       <Project>{28f132df-707b-4d9c-a560-385a6b60b036}</Project>
       <Name>FactoryMethodClassLibrary</Name>
     </ProjectReference>
