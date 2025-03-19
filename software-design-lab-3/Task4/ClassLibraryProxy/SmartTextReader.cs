@@ -1,17 +1,24 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 public class SmartTextReader : ISmartTextReader
 {
-    private string _path;
+    public string Path { get; }
 
     public SmartTextReader(string path)
     {
-        _path = path;
+        Path = path;
     }
 
     public char[][] ReadFile()
     {
-        string[] lines = File.ReadAllLines(_path);
+        if (!File.Exists(Path))
+        {
+            Console.WriteLine("File not found!");
+            return new char[0][];
+        }
+
+        string[] lines = File.ReadAllLines(Path);
         char[][] result = new char[lines.Length][];
 
         for (int i = 0; i < lines.Length; i++)

@@ -8,7 +8,8 @@ namespace ConsoleAppFlyweight
     {
         static void Main(string[] args)
         {
-            string pathToRead = Path.Combine(Directory.GetCurrentDirectory(), "books.txt");
+            string projectRootPath = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName;
+            string pathToRead = Path.Combine(projectRootPath, "books.txt");
 
             if (!File.Exists(pathToRead))
             {

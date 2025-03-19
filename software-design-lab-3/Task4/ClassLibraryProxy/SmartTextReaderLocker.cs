@@ -3,38 +3,35 @@ using System;
 
 public class SmartTextReaderLocker : ISmartTextReader
 {
-    private ISmartTextReader _reader;
-    private Regex _reg;
-    private string _path;
+    private readonly ISmartTextReader _reader;
+    private readonly Regex _regex;
 
-    public SmartTextReaderLocker(ISmartTextReader reader, string path, string pattern)
+    public SmartTextReaderLocker(ISmartTextReader reader, string pattern)
     {
         _reader = reader;
-        _path = path;
 
         try
         {
-            _reg = new Regex(pattern, RegexOptions.IgnoreCase);
+            _regex = new Regex(pattern, RegexOptions.IgnoreCase);
         }
         catch (ArgumentException ex)
         {
             Console.WriteLine($"Incorrect regex pattern: {ex.Message}");
-            _reg = null;
+            _regex = new Regex(".*", RegexOptions.IgnoreCase);
         }
     }
 
     public char[][] ReadFile()
     {
-        if (_reg == null)
+        if (_reader is SmartTextReader smartReader)
         {
-            Console.WriteLine("Regex is invalid. Allowing file read.");
-            return _reader.ReadFile();
-        }
+            Console.WriteLine($"Checking access for file: {smartReader.Path}");
 
-        if (_reg.IsMatch(_path))
-        {
-            Console.WriteLine("Access denied!");
-            return new char[0][];
+            if (_regex.IsMatch(smartReader.Path))
+            {
+                Console.WriteLine("Access denied!");
+                return new char[0][];
+            }
         }
 
         return _reader.ReadFile();

@@ -2,7 +2,7 @@
 
 public class SmartTextChecker : ISmartTextReader
 {
-    private ISmartTextReader _reader;
+    private readonly ISmartTextReader _reader;
 
     public SmartTextChecker(ISmartTextReader reader)
     {
@@ -16,6 +16,13 @@ public class SmartTextChecker : ISmartTextReader
         try
         {
             char[][] content = _reader.ReadFile();
+
+            if (content.Length == 0)
+            {
+                Console.WriteLine("File was not read or is empty.");
+                return content;
+            }
+
             Console.WriteLine("Successfully read file.");
             Console.WriteLine($"Total lines: {content.Length}");
 
