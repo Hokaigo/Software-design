@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DisplayType.cs" />
     <Compile Include="ILightContainer.cs" />
+    <Compile Include="ILightNodeIterator.cs" />
     <Compile Include="LightElementNode.cs" />
     <Compile Include="LightNode.cs" />
     <Compile Include="LightTextNode.cs" />

@@ -20,6 +20,28 @@ namespace ConsoleAppComposite
             div.AddChild(p);
 
             Console.WriteLine(div.GetOuterHtml());
+
+            Console.WriteLine("Depth-first ->");
+            foreach (var node in div.DepthFirst())
+            {
+                PrintNode(node);
+            }
+
+            Console.WriteLine("\nBreadth-first ->");
+            foreach (var node in div.BreadthFirst())
+            {
+                PrintNode(node);
+            }
+
         }
+
+        static void PrintNode(LightNode node)
+        {
+            if (node is LightTextNode textNode)
+                Console.WriteLine($"{textNode.Text}");
+            else if (node is LightElementNode elementNode)
+                Console.WriteLine($"<{elementNode.TagName}>");
+        }
+
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ClassLibraryComposite
 {
-    public class LightElementNode : LightNode, ILightContainer
+    public class LightElementNode : LightNode, ILightContainer, ILightNodeIterator
     {
         public string TagName { get; }
         public DisplayType Display { get; }
@@ -58,6 +58,37 @@ namespace ClassLibraryComposite
             {
                 CssClasses = new List<string>(this.CssClasses)
             };
+        }
+
+        public IEnumerable<LightNode> DepthFirst()
+        {
+            yield return this;
+            foreach(var child  in _children)
+            {
+                if(child is ILightNodeIterator enumerable)
+                {
+                    foreach(var desc in enumerable.DepthFirst())
+                        yield return desc;
+                }
+                else yield return child;
+            }
+        }
+
+        public IEnumerable<LightNode> BreadthFirst()
+        {
+            var list = new List<LightNode> { this };
+            for(int i = 0; i < list.Count; i++)
+            {
+                var current = list[i];
+                yield return current;
+                if(current is LightElementNode elem)
+                {
+                    foreach(var curr in elem._children)
+                    {
+                        list.Add(curr);
+                    }
+                }
+            }
         }
     }
 }
