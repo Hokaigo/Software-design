@@ -23,12 +23,19 @@ namespace ClassLibraryComposite
 
         public void AddClass(string className) => CssClasses.Add(className);
 
+        public void RemoveChild(LightNode child)
+        {
+            if (_children.Remove(child))
+                child.NotifyRemoved();
+        }
+
         public void AddChild(LightNode child)
         {
             if (SelfClosing)
                 throw new InvalidOperationException($"Self-closing tag cannot have child elements.");
 
             _children.Add(child);
+            child.NotifyInserted();
         }
 
         public override string GetInnerHtml()
@@ -52,11 +59,21 @@ namespace ClassLibraryComposite
             return $"{indent}<{TagName}{classes} {style}>\n{childrenHtml}{indent}</{TagName}>\n";
         }
 
+        protected override string RenderContent(int indentLevel)
+        {
+            foreach (var child in _children)
+            {
+                child.Render(indentLevel + 1);
+            }
+
+            return GetOuterHtml(indentLevel);
+        }
+
         public LightElementNode Clone()
         {
-            return new LightElementNode(this.TagName, this.Display, this.SelfClosing)
+            return new LightElementNode(TagName, Display, SelfClosing)
             {
-                CssClasses = new List<string>(this.CssClasses)
+                CssClasses = new List<string>(CssClasses)
             };
         }
 
@@ -90,5 +107,21 @@ namespace ClassLibraryComposite
                 }
             }
         }
+
+        protected override void OnCreated() => Console.WriteLine($"ElementNode: <{TagName}> created");
+
+        protected override void OnInserted() => Console.WriteLine($"ElementNode: <{TagName}> inserted");
+
+        protected override void OnRemoved() => Console.WriteLine($"ElementNode: <{TagName}> removed");
+
+        protected override void OnStylesApplied() => Console.WriteLine($"ElementNode: <{TagName}> styles applied: display={(Display == DisplayType.Block ? "block" : "inline")}");
+
+        protected override void OnClassListApplied()
+        {
+            string classList = CssClasses.Any() ? string.Join(", ", CssClasses) : "(none)";
+            Console.WriteLine($"ElementNode: <{TagName}> class list applied: {classList}");
+        }
+
+        protected override void OnTextRendered() => Console.WriteLine($"ElementNode: <{TagName}> rendered");
     }
 }
