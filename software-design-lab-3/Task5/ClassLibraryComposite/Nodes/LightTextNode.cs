@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryComposite.Interfaces;
+using System;
 
 namespace ClassLibraryComposite
 {
@@ -14,6 +15,11 @@ namespace ClassLibraryComposite
         {
             string indent = new string(' ', indentLevel * 2);
             return $"{indent}{Text}\n";
+        }
+
+        public override void Accept(ILightNodeVisitor visitor, int depth)
+        {
+            visitor.Visit(this, depth);
         }
 
         protected override void OnCreated() => Console.WriteLine($"TextNode: \"{Text}\" created");

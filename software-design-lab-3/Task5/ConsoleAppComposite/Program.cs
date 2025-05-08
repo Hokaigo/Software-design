@@ -1,6 +1,7 @@
 ﻿using ClassLibraryComposite;
 using ClassLibraryComposite.Commands;
 using ClassLibraryComposite.enums;
+using ClassLibraryComposite.Visitors;
 using System;
 
 namespace ConsoleAppComposite
@@ -64,6 +65,11 @@ namespace ConsoleAppComposite
 
             manager.Redo();
             Console.WriteLine($"After redo: {string.Join(", ", div.CssClasses)}");
+
+            Console.WriteLine("\nVisitor statistics:");
+            var statsVisitor = new StatisticsVisitor();
+            div.Accept(statsVisitor, 0);
+            statsVisitor.PrintStats();
         }
 
         static void PrintNode(LightNode node)
