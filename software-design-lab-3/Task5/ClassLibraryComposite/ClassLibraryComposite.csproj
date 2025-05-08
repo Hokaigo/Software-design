@@ -41,13 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DisplayType.cs" />
-    <Compile Include="ILightContainer.cs" />
-    <Compile Include="ILightNodeIterator.cs" />
-    <Compile Include="LightElementNode.cs" />
-    <Compile Include="LightNode.cs" />
-    <Compile Include="LightTextNode.cs" />
+    <Compile Include="Enums\DisplayType.cs" />
+    <Compile Include="Enums\InteractionEvent.cs" />
+    <Compile Include="Interfaces\ILightContainer.cs" />
+    <Compile Include="Interfaces\ILightNodeIterator.cs" />
+    <Compile Include="Interfaces\ILightNodeState.cs" />
+    <Compile Include="Nodes\LightElementNode.cs" />
+    <Compile Include="Nodes\LightNode.cs" />
+    <Compile Include="Nodes\LightTextNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\ActiveState.cs" />
+    <Compile Include="States\HoverState.cs" />
+    <Compile Include="States\NormalState.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
