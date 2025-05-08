@@ -14,12 +14,17 @@ namespace ConsoleAppComposite
             h1.AddChild(new LightTextNode("My LightHTML!"));
             div.AddChild(h1);
 
-            LightElementNode p = new LightElementNode("ul", DisplayType.Inline, false);
-            p.AddChild(new LightTextNode("Welcome to a home page!"));
+            LightElementNode ul = new LightElementNode("ul", DisplayType.Inline, false);
+            ul.AddChild(new LightTextNode("Welcome to a home page!"));
 
-            div.AddChild(p);
+            div.AddChild(ul);
 
+            Console.WriteLine("Without rendering ->");
             Console.WriteLine(div.GetOuterHtml());
+
+            Console.WriteLine("With rendering ->");
+            Console.WriteLine(div.Render());
+
 
             Console.WriteLine("Depth-first ->");
             foreach (var node in div.DepthFirst())
