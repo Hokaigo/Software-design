@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ClassLibraryComposite
+namespace ClassLibraryComposite.Interfaces
 {
     public interface ILightNodeIterator
     {

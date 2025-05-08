@@ -1,5 +1,5 @@
 ﻿using ClassLibraryComposite.enums;
-using ClassLibraryComposite.interfaces;
+using ClassLibraryComposite.Interfaces;
 using ClassLibraryComposite.States;
 using System;
 using System.Collections.Generic;
@@ -13,6 +13,9 @@ namespace ClassLibraryComposite
         public DisplayType Display { get; }
         public bool SelfClosing { get; }
         public List<string> CssClasses { get; private set; }
+
+        public ILightNodeState CurrentState => _state;
+
         private List<LightNode> _children;  
         private ILightNodeState _state;
         private readonly Dictionary<InteractionEvent, ILightNodeState> _states;
@@ -24,6 +27,7 @@ namespace ClassLibraryComposite
             SelfClosing = selfClosing;
             CssClasses = new List<string>();
             _children = new List<LightNode>();
+
             _states = new Dictionary<InteractionEvent, ILightNodeState>
             {
                 { InteractionEvent.MouseEnter, new HoverState() },
@@ -31,6 +35,7 @@ namespace ClassLibraryComposite
                 { InteractionEvent.MouseDown, new ActiveState() },
                 { InteractionEvent.MouseUp, new HoverState() }
             };
+
             _state = new NormalState();
             _state.OnEnter(this); 
         }
@@ -43,6 +48,13 @@ namespace ClassLibraryComposite
             if (_states.TryGetValue(ev, out var newState))
                 _state = newState;
 
+            _state.OnEnter(this);
+        }
+
+        public void ForceState(ILightNodeState state)
+        {
+            _state.OnExit(this);
+            _state = state;
             _state.OnEnter(this);
         }
 

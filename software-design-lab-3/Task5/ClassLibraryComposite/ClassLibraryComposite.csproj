@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="Commands\EventCommand.cs" />
     <Compile Include="Enums\DisplayType.cs" />
     <Compile Include="Enums\InteractionEvent.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ILightContainer.cs" />
     <Compile Include="Interfaces\ILightNodeIterator.cs" />
     <Compile Include="Interfaces\ILightNodeState.cs" />
