@@ -21,7 +21,6 @@ namespace ClassLibraryComposite
         public void NotifyInserted() => OnInserted();
         public void NotifyRemoved() => OnRemoved();
 
-        // Hooks – можна перевизначати у спадкоємцях
         protected virtual void OnCreated() { }
         protected virtual void OnInserted() { }
         protected virtual void OnRemoved() { }

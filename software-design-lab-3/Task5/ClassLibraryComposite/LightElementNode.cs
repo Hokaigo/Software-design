@@ -108,17 +108,13 @@ namespace ClassLibraryComposite
             }
         }
 
-        protected override void OnCreated() =>
-               Console.WriteLine($"ElementNode: <{TagName}> created");
+        protected override void OnCreated() => Console.WriteLine($"ElementNode: <{TagName}> created");
 
-        protected override void OnInserted() =>
-            Console.WriteLine($"ElementNode: <{TagName}> inserted");
+        protected override void OnInserted() => Console.WriteLine($"ElementNode: <{TagName}> inserted");
 
-        protected override void OnRemoved() =>
-            Console.WriteLine($"ElementNode: <{TagName}> removed");
+        protected override void OnRemoved() => Console.WriteLine($"ElementNode: <{TagName}> removed");
 
-        protected override void OnStylesApplied() =>
-            Console.WriteLine($"ElementNode: <{TagName}> styles applied: display={(Display == DisplayType.Block ? "block" : "inline")}");
+        protected override void OnStylesApplied() => Console.WriteLine($"ElementNode: <{TagName}> styles applied: display={(Display == DisplayType.Block ? "block" : "inline")}");
 
         protected override void OnClassListApplied()
         {
@@ -126,7 +122,6 @@ namespace ClassLibraryComposite
             Console.WriteLine($"ElementNode: <{TagName}> class list applied: {classList}");
         }
 
-        protected override void OnTextRendered() =>
-            Console.WriteLine($"ElementNode: <{TagName}> rendered");
+        protected override void OnTextRendered() => Console.WriteLine($"ElementNode: <{TagName}> rendered");
     }
 }
