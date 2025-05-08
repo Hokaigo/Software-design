@@ -1,4 +1,4 @@
-﻿namespace ClassLibraryComposite
+﻿namespace ClassLibraryComposite.Interfaces
 {
     public interface ILightContainer
     {

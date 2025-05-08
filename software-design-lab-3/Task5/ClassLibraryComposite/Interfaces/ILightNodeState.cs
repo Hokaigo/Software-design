@@ -1,4 +1,4 @@
-﻿namespace ClassLibraryComposite.interfaces
+﻿namespace ClassLibraryComposite.Interfaces
 {
     public interface ILightNodeState
     {

@@ -1,4 +1,5 @@
 ﻿using ClassLibraryComposite;
+using ClassLibraryComposite.Commands;
 using ClassLibraryComposite.enums;
 using System;
 
@@ -24,9 +25,9 @@ namespace ConsoleAppComposite
             Console.WriteLine(div.GetOuterHtml());
 
             div.HandleEvent(InteractionEvent.MouseEnter);
-            div.HandleEvent(InteractionEvent.MouseDown); 
-            div.HandleEvent(InteractionEvent.MouseUp);   
-            div.HandleEvent(InteractionEvent.MouseLeave); 
+            div.HandleEvent(InteractionEvent.MouseDown);
+            div.HandleEvent(InteractionEvent.MouseUp);
+            div.HandleEvent(InteractionEvent.MouseLeave);
 
             Console.WriteLine("\nWith rendering ->");
             Console.WriteLine(div.Render());
@@ -43,6 +44,26 @@ namespace ConsoleAppComposite
                 PrintNode(node);
             }
 
+            Console.WriteLine("\nWith Command Pattern ->");
+
+            CommandManager manager = new CommandManager();
+
+            var enterCommand = new EventCommand(div, InteractionEvent.MouseEnter);
+            var downCommand = new EventCommand(div, InteractionEvent.MouseDown);
+
+            manager.Execute(enterCommand); 
+            manager.Execute(downCommand); 
+
+            Console.WriteLine($"Current classes after commands: {string.Join(", ", div.CssClasses)}");
+
+            manager.Undo();
+            Console.WriteLine($"After undo: {string.Join(", ", div.CssClasses)}");
+
+            manager.Undo(); 
+            Console.WriteLine($"After second undo: {string.Join(", ", div.CssClasses)}");
+
+            manager.Redo();
+            Console.WriteLine($"After redo: {string.Join(", ", div.CssClasses)}");
         }
 
         static void PrintNode(LightNode node)

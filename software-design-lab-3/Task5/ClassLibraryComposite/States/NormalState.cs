@@ -1,4 +1,4 @@
-﻿using ClassLibraryComposite.interfaces;
+﻿using ClassLibraryComposite.Interfaces;
 using System;
 
 namespace ClassLibraryComposite.States
