@@ -49,6 +49,7 @@
     <Compile Include="Interfaces\ILightContainer.cs" />
     <Compile Include="Interfaces\ILightNodeIterator.cs" />
     <Compile Include="Interfaces\ILightNodeState.cs" />
+    <Compile Include="Interfaces\ILightNodeVisitor.cs" />
     <Compile Include="Nodes\LightElementNode.cs" />
     <Compile Include="Nodes\LightNode.cs" />
     <Compile Include="Nodes\LightTextNode.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="States\ActiveState.cs" />
     <Compile Include="States\HoverState.cs" />
     <Compile Include="States\NormalState.cs" />
+    <Compile Include="Visitors\StatisticsVisitor.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

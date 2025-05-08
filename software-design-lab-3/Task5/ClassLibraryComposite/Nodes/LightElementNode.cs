@@ -58,6 +58,15 @@ namespace ClassLibraryComposite
             _state.OnEnter(this);
         }
 
+        public override void Accept(ILightNodeVisitor visitor, int depth)
+        {
+            visitor.Visit(this, depth);
+            foreach (var child in _children)
+            {
+                child.Accept(visitor, depth + 1);
+            }
+        }
+
         public void AddClass(string className) => CssClasses.Add(className);
 
         public void RemoveClass(string className)

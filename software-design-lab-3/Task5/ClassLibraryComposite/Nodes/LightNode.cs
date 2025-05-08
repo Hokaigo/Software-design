@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryComposite.Interfaces;
+using System;
 
 namespace ClassLibraryComposite
 {
@@ -30,5 +31,8 @@ namespace ClassLibraryComposite
 
         public abstract string GetInnerHtml();
         public abstract string GetOuterHtml(int indentLevel = 0);
+
+        public abstract void Accept(ILightNodeVisitor visitor, int depth);
+
     }
 }
