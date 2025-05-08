@@ -1,4 +1,5 @@
 ﻿using ClassLibraryComposite;
+using ClassLibraryComposite.enums;
 using System;
 
 namespace ConsoleAppComposite
@@ -22,9 +23,13 @@ namespace ConsoleAppComposite
             Console.WriteLine("Without rendering ->");
             Console.WriteLine(div.GetOuterHtml());
 
-            Console.WriteLine("With rendering ->");
-            Console.WriteLine(div.Render());
+            div.HandleEvent(InteractionEvent.MouseEnter);
+            div.HandleEvent(InteractionEvent.MouseDown); 
+            div.HandleEvent(InteractionEvent.MouseUp);   
+            div.HandleEvent(InteractionEvent.MouseLeave); 
 
+            Console.WriteLine("\nWith rendering ->");
+            Console.WriteLine(div.Render());
 
             Console.WriteLine("Depth-first ->");
             foreach (var node in div.DepthFirst())

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ClassLibraryComposite.enums;
+using ClassLibraryComposite.interfaces;
+using ClassLibraryComposite.States;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,6 +14,8 @@ namespace ClassLibraryComposite
         public bool SelfClosing { get; }
         public List<string> CssClasses { get; private set; }
         private List<LightNode> _children;  
+        private ILightNodeState _state;
+        private readonly Dictionary<InteractionEvent, ILightNodeState> _states;
 
         public LightElementNode(string tagName, DisplayType display, bool selfClosing)
         {
@@ -19,9 +24,35 @@ namespace ClassLibraryComposite
             SelfClosing = selfClosing;
             CssClasses = new List<string>();
             _children = new List<LightNode>();
+            _states = new Dictionary<InteractionEvent, ILightNodeState>
+            {
+                { InteractionEvent.MouseEnter, new HoverState() },
+                { InteractionEvent.MouseLeave, new NormalState() },
+                { InteractionEvent.MouseDown, new ActiveState() },
+                { InteractionEvent.MouseUp, new HoverState() }
+            };
+            _state = new NormalState();
+            _state.OnEnter(this); 
+        }
+
+        public void HandleEvent(InteractionEvent ev)
+        {
+            Console.WriteLine($"Handling event: {ev}");
+            _state.OnExit(this);
+
+            if (_states.TryGetValue(ev, out var newState))
+                _state = newState;
+
+            _state.OnEnter(this);
         }
 
         public void AddClass(string className) => CssClasses.Add(className);
+
+        public void RemoveClass(string className)
+        {
+            if (CssClasses.Contains(className))
+                CssClasses.Remove(className);
+        }
 
         public void RemoveChild(LightNode child)
         {
